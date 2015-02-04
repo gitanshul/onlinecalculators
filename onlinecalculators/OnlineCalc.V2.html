@@ -1,3 +1,14 @@
+Use the calculator below to estimate approximate discounted cash flow (DCF) valuations of stocks of your choice.
+
+Before you work on the calculator, read this post I did on <a href="http://www.safalniveshak.com/value-stocks-using-dcf/" target="_blank">how to value stocks using DCF</a> to understand the basics of sensible DCF usage, and how to avoid its misuse.
+
+And after you work on the calculator and arrive at DCF values for your chosen stocks, remember that your results will be proven wrong in the future (all valuations are wrong, you see!). :-)
+
+A tool like calculator or excel must only be used for approximate estimations, and never to seek perfections. What matters more is whether the business is simple to understand and whether you understand it or not.
+
+So, please focus on decisions, and not on outcomes of these tools.
+
+Now, try out this DCF Calculator (please use only absolute values, i.e., without decimals and percentage signs)...
 <style type="text/css">
                                 div.main1 {
                                     margin: 0;
@@ -115,82 +126,95 @@ a.tooltip span
 <fieldset>
 <legend class="dcf">DCF Calculator :</legend>
 <p>
-                                                    <label for="fcf" class="float"><strong>Initial Free Cash Flow :</strong><br />
+                                                    <label for="fcf" class="float"><strong>Initial FCF (Rs Cr)</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="fcf-name" id="fcf" type="text" size="10"/>   
 <a href="#" class="tooltip">
     Help!
     <span>        
         <strong>Normalize. </strong><br />
-It's better to take a 3-5 years average FCF as this starting number instead of the latest year's FCF. This is for the simple reason that the latest year can be a best/worst number. FCF can be calculated from the Cash Flow Statement in the annual report. FCF formula = Net Cash from/(used in) Operating Activities minus Purchase of Fixed Assets
+Take 3 years' average free cash flow (FCF) as this starting number. FCF can be calculated from the Cash Flow Statement. FCF formula = Net Cash from/(used in) Operating Activities <em>minus</em> Purchase of Fixed Assets.
 </span>
 </a>                                                            
 
                                                 </p>
    <div id="messageBox"></div>    
 <p>
-                                                    <label for="gr1" class="float"><strong>Growth Rate (1-5 Years) :</strong><br />
+                                                    <label for="gr1" class="float"><strong>Growth Rate (1-5 Years)</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="gr1-name" id="gr1" type="text" size="10" />
 <a href="#" class="tooltip">
     Help!
     <span>        
-        <strong>Be conservative! </strong><br /> In a 2-stage DCF, we break the next 10 years into two phases of five years each, and then calculate the FCF growth based on growth rates assumed for each period. Prefer to value stocks based on the present data rather than what will happen in the future. Anything could happen even in 1 year, and if the growth rate is too high and the company cannot meet those expectations, there is no where to go but down. The best practice is to keep growth rates as low as possible. If the company looks to be undervalued with 0% growth rate, you have more upside than downside. The higher you set the growth rate, the higher you set up the downside potential. Just be reasonable and use common sense. On most of the stocks I value, I rarely go above 15% (for the first 5-year period), and that’s only for the safest, cash-generating businesses like Colgate, HUL, Infosys etc. This is approx. 2x India's expected long-term GDP growth rate. The goal of choosing a growth rate is to find a number which is conservative yet not very low or pessimistic, and close to reality in order to capture potential future gains without eliminating too many investment candidates.
+        <strong>Be conservative! </strong><br /> Be reasonable with your growth rate assumptions. Higher you set the growth rate, higher you set up the downside potential. Tip - For best businesses, cap the growth for first five years to 20% and 15% for next five.
 </span>
 </a>                                                            
 
                                                 </p>
 <p>
-                                                    <label for="gr2" class="float"><strong>Growth Rate (6-10 Years) :</strong><br />
+                                                    <label for="gr2" class="float"><strong>Growth Rate (6-10 Years)</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="gr2-name" id="gr2" type="text" size="10" />
                                                 </p>
 <p>
-                                                    <label for="dr" class="float"><strong>Discount Rate :</strong><br />
+                                                    <label for="dr" class="float"><strong>Discount Rate</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="dr-name" id="dr" type="text" size="10" />
 <a href="#" class="tooltip">
     Help!
     <span>        
-        <strong>This is the rate at which you discount the future cash flows to the present value. </strong><br/> So what would be a good rate? Considering that the “average” market return is about 10-15%, a minimum discount rate should be set to 10%. I use 10% as a minimum for stable and predictable companies such as Colgate, Infosys, HUL while 15% is a good return for less predictable companies such as, say Opto Circuits. Also, do not adjust the entire risk of a investment in its discount rate. In other words, if Opto Circuits is a "riskier" investment that say Titan, adjust for some risk in the cash flow growth estimates and some in the discount rate. Ignore simple yet junk models like CAPM to get the discount rate. People in the finance world pour out their hearts to obtain the most accurate discount rate by analyzing risk free rates, beta, risk premium and WACC. It's just short of rubbish! What’s the point in learning every method of hammering a nail when all you have to do is hit it on the head. So do not over-complicate this aspect. The beauty of old school Graham and Buffett is that their investments are based on common sense, not volatility and other mumbo jumbo. There is no hard and fast rule for choosing a discount rate. Using a high discount rate to discount the future cash just means you are willing to pay less today for the future cash and vice versa.Do understand that - “You can’t compensate for risk by using a high discount rate.”  The important aspect is not deciding upon a discount rate, but in being logical and reasonable about cash projections. Another way you can look at discount rate is to not using different discount rates for different businesses. It won't really matter what rate you use as long as you are being intellectually honest and conservative about future cash flows.
+        Discount rate - Rate at which you discount the future cash flows to the present value. It's your expected rate of return from the stock. 10-12% is good for stable, predictable businesses. 15% is good for relatively less predictable businesses. Using a high rate to discount the future cash just means you are willing to pay less today for the future cash and vice versa. It won't really matter what rate you use as long as you are being intellectually honest and conservative about future cash flows.
 </span>
 </a>                                                            
 
                                                 </p>
 <p>
-                                                    <label for="tgr" class="float"><strong>Terminal Growth Rate :</strong><br />
+                                                    <label for="tgr" class="float"><strong>Terminal Growth Rate</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="tgr-name" id="tgr" type="text" size="10" />
 <a href="#" class="tooltip">
     Help!
     <span>        
-        <strong>Guideline to choose Terminal Growth Rate : </strong><br />Since it isn’t practical to forecast cash flows for an infinite number of years, it’s usual to end the DCF with a terminal value. The best terminal growth rate is 0%, and the highest you should go (for safest businesses) is 2%.
+        Since it isn’t practical to forecast cash flows for an infinite number of years, it’s usual to end the DCF with a terminal value. The best terminal growth rate is 0%, and the highest you should go (for safest businesses) is 2%.
 </span>
 </a>    
 </p>
 <p>
-                                                    <label for="so" class="float"><strong>Shares Outstanding :</strong><br />
+                                                    <label for="so" class="float"><strong>Shares Outstanding (Cr)</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="so-name" id="so" type="text" size="10" />
 
 </p>
 <p>
-                                                    <label for="debt" class="float"><strong>Net Debt :</strong><br />
+                                                    <label for="debt" class="float"><strong>Net Debt (Rs Cr)</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="debt-name" id="debt" type="text" size="10" />
 <a href="#" class="tooltip">
     Help!
     <span>        
-        <strong>Enter a negative value for cash positive companies.</strong><br />
-If this figure is negative, it means that the company has more Cash than Debt. 
+            <strong>Net Debt - Total debt of latest period <em>minus</em> Total cash and equivalents. Enter a negative value for cash positive companies.</strong><br />
 </span>
 </a>    
 
 </p>
 <p>
-                                                    <label for="dcfval" class="float"><strong>DCF Value per Share :</strong><br />
+                                                    <label for="mos" class="float"><strong>Margin of Safety (%)</strong><br />
+                                                    </label><br />
+                                                    <input class="inp-text" name="mos-name" id="mos" type="text" size="10" />
+<a href="#" class="tooltip">
+    Help!
+    <span>        
+            <strong>Margin of Safety (%). It's a good idea to have 30-40% margin of safety to allow for any errors in assumption.</strong><br/>
+</span>
+</a> </p>   
+    <p>
+                                                    <label for="dcfval" class="float"><strong>DCF Value per Share</strong><br />
                                                     </label><br />
                                                     <input class="inp-text" name="dcfval-name" id="dcfval" readonly="true" type="text" size="10" /></p>
+        <p>
+                                                    <label for="mosdcf" class="float"><strong>DCF Value (adj for MOS)</strong><br />
+                                                    </label><br />
+                                                    <input class="inp-text" name="mosdcf-name" id="mosdcf" readonly="true" type="text" size="10" /></p>
 <p>                                                <input class="submit-button" type="button" alt="Reset" name="Reset" value="Reset" onClick="resetdcf()"/><br />
                                                 <input class="submit-button" type="button" alt="SUBMIT" name="Submit" value="Calculate" onClick="calculatedcf()"/><br />
                                             </fieldset>
@@ -271,6 +295,7 @@ If this figure is negative, it means that the company has more Cash than Debt.
         var termGrowthRate = document.getElementById('tgr').value;
         var shares = document.getElementById('so').value;
         var debt = document.getElementById('debt').value;
+        var mos = document.getElementById('mos').value;
 
         var fcf1 = (fcf * (1 + growthRate1 / 100)).toFixed(0);
         var fcf2 = (fcf1 * (1 + growthRate1 / 100)).toFixed(0);
@@ -300,7 +325,8 @@ If this figure is negative, it means that the company has more Cash than Debt.
         var totalTV = ((parseInt(tyval) / ((discRate - termGrowthRate) / 100)) / Math.pow((1 + discRate / 100), 10)).toFixed(0);
         var totalVal = parseInt(totalPV) + parseInt(totalTV);
         var dcfval = parseInt((parseInt(totalVal) - debt) / (shares));
-
+        var mosdcf = parseInt(dcfval*(1 - mos/100));
         document.getElementById('dcfval').value = dcfval;
+        document.getElementById('mosdcf').value = mosdcf;
     }
 </script>
