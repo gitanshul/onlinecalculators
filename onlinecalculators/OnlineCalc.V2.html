@@ -262,6 +262,11 @@ Take 3 years' average free cash flow (FCF) as this starting number. FCF can be c
             flag = false;
         }
         
+        if(!document.getElementById('mos').value.match(grRegex)) {              
+            errorString += 'Margin Of Safety (%) <br/>';
+            flag = false;
+        }
+
         if(!document.getElementById('tgr').value.match(grRegex)) {              
             errorString += 'Terminal Growth Rate <br/>';
             flag = false;
