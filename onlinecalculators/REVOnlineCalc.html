@@ -1,57 +1,439 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<p>Please use only absolute values, i.e., without decimals and percentage signs</p>
+<style type="text/css">
+    div.main1 {
+        margin: 0;
+        padding: 0;
+    }
+    div.main2 {
+        height: 100%;
+        font-size: 62.5%
+    }
+    div.main3 {
+        height: 100%;
+        background-color: #FFFFFF;
+        font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+    }
+    form.revform {
+        margin: 25px 0 0 29px;
+        padding-bottom: 30px;
+    }
+    fieldset {
+        margin: 0 0 22px 0;
+        border: 1px solid #A4A4A4;
+        padding: 12px 17px;
+        background-color: #FAFAFA;
+    }
+    legend.rev {
+        font-size: 1.5em;
+        background-color: #A33200;
+        color: #FFFFFF;
+        font-weight: bold;
+        padding: 4px 8px;
+    }
+    label.float {
+        display: block;
+        font-size: 1.1em;
+        float: left;
+        width: 320px;
+        margin: 4px 0 0 0;
+        clear: left;
+    }
+    input.inp-text,
+    input.inp-text-ro {
+        border: 1px solid #909090;
+        padding: 3px;
+        width: 100px;
+        margin: 0 0 8px 0;
+        font-size: 1.1em;
+    }
+    input.inp-text-ro {
+        background-color: #FA8258;
+    }
+    input.submit-button {
+        font: 0.95em Georgia, "Times New Roman", Times, serif;
+        letter-spacing: 2px;
+        float: left;
+        margin: 5px 2px 0 0;
+    }
+    input.submit-reset {
+        font: 0.95em Georgia, "Times New Roman", Times, serif;
+        letter-spacing: 2px;
+        float: left;
+        margin: 0 2px 0 0;
+    }
+    div.error-box {
+        font: 1.0em Georgia, "Times New Roman", Times, serif;
+        border: 1px solid #909090;
+        height: 340px;
+        width: 175px;
+        float: right;
+        background-color: #FF9999;
+        margin: 5px;
+        padding: 5px;
+    }
+    div.error-box br {
+        display: block;
+    }
+    div.error-box strong {
+        font-size: 14px;
+    }
+    div.help-box {
+        font: 1.0em Georgia, "Times New Roman", Times, serif;
+        border: 1px solid #909090;
+        height: 300px;
+        width: 200px;
+        float: right;
+        background-color: #FFFFCC;
+        margin: 5px;
+        padding: 5px;
+    }
+    form br {
+        display: none;
+    }
+    /* For help tip */
+    a.tooltip {
+        outline: none;
+        font-size: 12px;
+    }
+    a.tooltip strong {
+        font-size: 14px;
+    }
+    a.tooltip:hover {
+        text-decoration: none;
+    }
+    a.tooltip span {
+        z-index: 10;
+        display: none;
+        padding: 14px 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        width: auto;
+        line-height: 16px;
+        height: auto;
+    }
+    a.tooltip:hover span {
+        display: inline;
+        position: absolute;
+        border: 2px solid #FFF;
+        color: #EEE;
+        background: #333 url(cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+        font-size: 14px;
+    }
+    .callout {
+        z-index: 20;
+        position: absolute;
+        border: 0;
+        top: -14px;
+        left: 120px;
+    }
+    </p> <p>a.tooltip span {
+        border-radius: 2px;
+        box-shadow: 0px 0px 8px 4px #666;
+        </p> <p>
+    }
+</style>
+<div class="main1">
+    <div class="main2">
+        <div class="main3">
+            <form class="revform" name="revform" action="" method="post">
+                <fieldset>
+                    <legend class="rev">REV Calculator :</legend>
+                    <p>
+                        <label for="eps" class="float"><strong>Latest Full Year EPS (Year 1, Rs.)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="eps-name" id="eps" type="text" size="10" />
+                        <br />
+                        <!-- Placeholder for EPS help (tool tip) -->
+                    </p>
+                    <div id="messageBox"></div>
+                    <p>
+                        <label for="epsgr1" class="float"><strong>Expected EPS growth in Year 2(%)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="epsgr1-name" id="epsgr1" type="text" size="10" />
+                        <br />
+                        <a href="#" class="tooltip">
+                            <br />Help!
+                            <br />
+                            <span><br />This is basically "consensus earnings estimates", which you can search for in Google, or on FT or Reuters websites. Like for Asian Paints - http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s=ASIANPAINT:NSI
+</span>
+                            <br />
+                        </a>
+                    </p>
+                    <p>
+                        <label for="epsgr2" class="float"><strong>Expected EPS growth in Year 3(%)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="epsgr2-name" id="epsgr2" type="text" size="10" />
+                        <br/>
+                        <a href="#" class="tooltip">
+                            <br />Help!
+                            <br />
+                            <span><br />
+        This is basically "consensus earnings estimates", which you can search for in Google, or on FT or Reuters websites. Like for Asian Paints - http://markets.ft.com/research/Markets/Tearsheets/Forecasts?s=ASIANPAINT:NSI<br />
+</span>
+                            <br />
+                        </a>
+                    </p>
+                    <p>
+                        <label for="dvnd" class="float"><strong>Latest final dividend per share (Rs)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="dvnd-name" id="dvnd" type="text" size="10" />
+                        <br />
+                        <a href="#" class="tooltip">
+                            <br />Help!
+                            <br />
+                            <span><br />
+         Look at a company's average dividend payout (DPS divided by EPS) in the past, and estimate the DPS in the future using a similar percentage number. Like in case of Asian Paints, I have assumed a payout of 40%.<br />
+</span>
+                            <br />
+                        </a>
 
-<head profile="http://gmpg.org/xfn/11">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Discounted Cash Flow Calculator</title>
-    <meta name="robots" content="noodp,noydir" />
-</head>
+                    </p>
+                    <p>
+                        <label for="bv" class="float"><strong>Latest Book Value per share (Rs)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="bv-name" id="bv" type="text" size="10" />
+                        <!-- Placeholder for Book Value Help (tool tip) -->
+                    </p>
+                    <p>
+                        <label for="dr" class="float"><strong>Discount Rate/Req. Rate of return (%)</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="dr-name" id="dr" type="text" size="10" />
+                        <!-- Placeholder for Discount Rate Help (tool tip) -->
+                    </p>
+                    <p>
+                        <label for="implEPSgr" class="float"><strong>Mr. Market Implied EPS Growth Rate</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="implEPSgr-name" id="implEPSgr" type="text" size="10" />
+                        <br />
+                        <a href="#" class="tooltip">
+                            <br />Help!
+                            <br />
+                            <span><br />
+            Play around with this rate to bring the Value of Equity same as Current Stock Price below.<br />
+</span>
+                            <br />
+                        </a>
+                    </p>
+                    <p>
+                        <label for="cmp" class="float"><strong>Current Stock Price</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text" name="cmp-name" id="cmp" type="text" size="10" />
+                        <!-- Placeholder for Current Market Price Help (tool tip) -->
+                    </p>
+                    <p>
+                        <label for="totValSansSpec" class="float"><strong>Total Value excl. Speculative Value</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text-ro" name="totValSansSpec-name" id="totValSansSpec" readonly="true" type="text" size="10" />
+                    </p>
+                    <p>
+                        <label for="specVal" class="float"><strong>Speculative Value</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text-ro" name="specVal-name" id="specVal" readonly="true" type="text" size="10" />
+                    </p>
+                    <p>
+                        <label for="specValOfCmp" class="float"><strong>Speculative Value as % of CMP</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text-ro" name="specValOfCmp-name" id="specValOfCmp" readonly="true" type="text" size="10" />
+                    </p>
+                    <p>
+                        <label for="eqVal" class="float"><strong>Value of Equity</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text-ro" name="eqVal-name" id="eqVal" readonly="true" type="text" size="10" />
+                    </p>
+                    <p>
+                        <label for="variation" class="float"><strong>Variation</strong>
+                            <br />
+                        </label>
+                        <br />
+                        <input class="inp-text-ro" name="variation-name" id="variation" readonly="true" type="text" size="10" />
+                    </p>
+
+                    <p>
+                        <input class="submit-button" type="button" alt="Reset" name="Reset" value="Reset" onClick="resetrev()" />
+                        <br />
+                        <input class="submit-button" type="button" alt="SUBMIT" name="Submit" value="Calculate" onClick="calcrev()" />
+                        <br />
+                </fieldset>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
-    var eps = 100; //parseInt(document.getElementById('eps').value);
-    var epsgr1 = 15; //parseInt(document.getElementById('epsgr1').value);
-    var epsgr2 = 15; //parseInt(document.getElementById('epsgr2').value);
-    var dvnd = 30; //parseInt(document.getElementById('dvnd').value);
-    var bv = 500; //parseInt(document.getElementById('bv').value);
-    var dr = 12; //parseInt(document.getElementById('dr').value);
-    var cmp = 2500; //parseInt(document.getElementById('cmp').value);
-    var implEPSgr = 9; //parseInt(document.getElementById('implEPSgr').value);
+    
+    function validate(){
+        try{
+            var flag = true;
+            var errorString = '';           
+            var noDecimalRegex = /^[0-9]+$/;  
+            var allowDecimalRegex = /^[0-9]+(.[0-9]{1,2})?$/;   
+
+            errorString = '<strong>Please enter a Valid value for : </strong><br/><br/>';
+            
+            if(!document.getElementById('eps').value.match(allowDecimalRegex)) {              
+                errorString += 'Latest Full Year EPS (Year 1, Rs.) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('epsgr1').value.match(noDecimalRegex)) {              
+                errorString += 'Expected EPS growth in Year 2(%) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('epsgr2').value.match(noDecimalRegex)) {              
+                errorString += 'Expected EPS growth in Year 3(%) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('dvnd').value.match(allowDecimalRegex)) {  
+                errorString += 'Latest final dividend per share (Rs) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('bv').value.match(allowDecimalRegex)) {              
+                errorString += 'Latest Book Value per share (Rs) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('dr').value.match(noDecimalRegex)) {              
+                errorString += 'Discount Rate/Req. Rate of return (%) <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('implEPSgr').value.match(allowDecimalRegex)) {              
+                errorString += 'Mr. Market Implied EPS Growth Rate <br/><br/>';
+                flag = false;
+            }
+
+            if(!document.getElementById('cmp').value.match(allowDecimalRegex)) {              
+                errorString += 'Current Stock Price <br/><br/>';
+                flag = false;
+            }
+
+            if(!flag){                
+                document.getElementById('messageBox').innerHTML = '<div class="error-box">'+errorString+'</div>';                
+            }
+            
+            return flag;
         
-    var eps1 = parseInt(eps*(1+epsgr1/100)); console.log('EPS FY15E : '+eps1);
-    var eps2 = parseInt(eps1*(1+epsgr2/100)); console.log('EPS FY16E : '+eps2);
-    var dvndpayoutratio = dvnd/eps; console.log('Dividend Payout Ratio : '+dvndpayoutratio);
+        }catch(e){
+            console.log('Error in validate() : '+e);
+        }
+    }
     
-    var dvnd1 = parseInt(eps1*dvndpayoutratio); console.log('Dividend FY15E : '+dvnd1);
-    var dvnd2 = parseInt(eps2*dvndpayoutratio); console.log('Dividend FY16E : '+dvnd2);
-    var bv1 = bv + eps1 - dvnd1; console.log('BVPS FY15E : '+bv1);
-    var bv2 = bv1 + eps2 - dvnd2; console.log('BVPS FY16E : '+bv2);
-    
-    var roce1 = (100*eps1/bv).toFixed(2); console.log('ROCE FY15E : '+roce1);
-    var roce2 = (100*eps2/bv1).toFixed(2); console.log('ROCE FY16E : '+roce2);
-    
-    var re1 = (roce1 - dr)*bv/100; console.log('Residual Earning FY15E : '+re1);
-    var re2 = (roce2 - dr)*bv1/100; console.log('Residual Earning FY16E : '+re2);
-    
-    var grRe = ((re2/re1)- 1).toFixed(4) ; console.log('Growth in Residual Earning : '+grRe*100);
-    var ltgreps = (eps2/eps1 - 1).toFixed(2); console.log('LT Growth in EPS : '+ltgreps*100);
-    
-    var staccVal1 = parseInt(re1/(1+dr/100)); console.log('Value from ST accounting Year 1 : '+staccVal1);
-    var staccVal2 = parseInt(re2/((1+dr/100)*(dr/100))); console.log('Value from ST accounting Year 2 : '+staccVal2);
-    
-    var totValSansSpec = bv + staccVal1 + staccVal2; console.log('Total Value excl. Speculative : '+totValSansSpec);
-    var specVal = cmp - totValSansSpec; console.log('Speculative Value : '+specVal);
-    var specValOfCmp = specVal/cmp;
-    
-    var fre1 = roce1 - dr; console.log('Forecasted Residual Income FY15E : '+fre1);
-    var fre2 = roce2 - dr; console.log('Forecasted Residual Income FY16E : '+fre2);
-    
-    var eqVal = parseInt(bv + ((fre1*bv/100)/(1+dr/100)) + ((fre2*bv1/100)/((1+dr/100)*((dr-implEPSgr)/100)))); 
-    console.log('Value of Equity : '+eqVal);
-    
-    var variation = ((eqVal/cmp - 1)*100).toFixed(2); console.log('Variation : '+variation);
-</script>
+    function calcrev(){
+        
+        if(!validate()){
+            return;
+        }
+        
+        document.getElementById('messageBox').innerHTML = '';
+        
+        try{
+            var eps = parseInt(document.getElementById('eps').value); 
+            var epsgr1 = parseInt(document.getElementById('epsgr1').value);
+            var epsgr2 = parseInt(document.getElementById('epsgr2').value);
+            var dvnd = parseInt(document.getElementById('dvnd').value);
+            var bv = parseInt(document.getElementById('bv').value);
+            var dr = parseInt(document.getElementById('dr').value);
+            var cmp = parseInt(document.getElementById('cmp').value);
+            var implEPSgr = document.getElementById('implEPSgr').value;
+            
+            var eps1 = parseInt(eps*(1+epsgr1/100)); 
+            var eps2 = parseInt(eps1*(1+epsgr2/100)); 
+            var dvndpayoutratio = dvnd/eps; 
 
-<body>
+            var dvnd1 = parseInt(eps1*dvndpayoutratio); 
+            var dvnd2 = parseInt(eps2*dvndpayoutratio); 
+            var bv1 = bv + eps1 - dvnd1; 
+            var bv2 = bv1 + eps2 - dvnd2; 
 
-</body>
+            var roce1 = (100*eps1/bv).toFixed(2); 
+            var roce2 = (100*eps2/bv1).toFixed(2); 
 
-</html>
+            var re1 = (roce1 - dr)*bv/100; 
+            var re2 = (roce2 - dr)*bv1/100; 
+
+            var grRe = ((re2/re1)- 1).toFixed(4) ; 
+            var ltgreps = (eps2/eps1 - 1).toFixed(2); 
+
+            var staccVal1 = parseInt(re1/(1+dr/100)); 
+            var staccVal2 = parseInt(re2/((1+dr/100)*(dr/100))); 
+
+            var totValSansSpec = bv + staccVal1 + staccVal2; 
+            var specVal = cmp - totValSansSpec; 
+            var specValOfCmp = (specVal*100/cmp).toFixed(2);
+
+            var fre1 = roce1 - dr; 
+            var fre2 = roce2 - dr; 
+
+            var eqVal = parseInt(bv + ((fre1*bv/100)/(1+dr/100)) + ((fre2*bv1/100)/((1+dr/100)*((dr-implEPSgr)/100)))); 
+            
+            var variation = ((eqVal/cmp - 1)*100).toFixed(2); 
+
+            document.getElementById('totValSansSpec').value = totValSansSpec;
+            document.getElementById('specVal').value = specVal;
+            document.getElementById('specValOfCmp').value = specValOfCmp;
+            document.getElementById('eqVal').value = eqVal;
+            document.getElementById('variation').value = variation;
+            
+            console.log('EPS FY15E : '+eps1);
+            console.log('EPS FY16E : '+eps2);
+            console.log('Dividend Payout Ratio : '+dvndpayoutratio);
+            console.log('Dividend FY15E : '+dvnd1);
+            console.log('Dividend FY16E : '+dvnd2);
+            console.log('BVPS FY15E : '+bv1);
+            console.log('BVPS FY16E : '+bv2);
+            console.log('ROCE FY15E : '+roce1);
+            console.log('ROCE FY16E : '+roce2);
+            console.log('Residual Earning FY15E : '+re1);
+            console.log('Residual Earning FY16E : '+re2);
+            console.log('Growth in Residual Earning : '+grRe*100);
+            console.log('LT Growth in EPS : '+ltgreps*100);
+            console.log('Value from ST accounting Year 1 : '+staccVal1);
+            console.log('Value from ST accounting Year 2 : '+staccVal2);
+            console.log('Total Value excl. Speculative : '+totValSansSpec);
+            console.log('Speculative Value : '+specVal);
+            console.log('Forecasted Residual Income FY15E : '+fre1);
+            console.log('Forecasted Residual Income FY16E : '+fre2);
+            console.log('Value of Equity : '+eqVal);
+            console.log('Variation : '+variation);
+        }catch(e){
+            console.log('Erro 4 : '+e);
+        }
+    }
+    
+    function resetrev(){
+        try {
+            document.getElementById('messageBox').innerHTML = '';
+            document.getElementsByName('revform')[0].reset();
+        } catch (e) {
+            console.log('error 3 : ' + e);
+        }
+    }
+</script> 
