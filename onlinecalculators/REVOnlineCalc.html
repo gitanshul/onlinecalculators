@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Discounted Cash Flow Calculator</title>
+    <meta name="robots" content="noodp,noydir" />
+</head>
+<script type="text/javascript">
+    var eps = 100; //parseInt(document.getElementById('eps').value);
+    var epsgr1 = 15; //parseInt(document.getElementById('epsgr1').value);
+    var epsgr2 = 15; //parseInt(document.getElementById('epsgr2').value);
+    var dvnd = 30; //parseInt(document.getElementById('dvnd').value);
+    var bv = 500; //parseInt(document.getElementById('bv').value);
+    var dr = 12; //parseInt(document.getElementById('dr').value);
+    var cmp = 2500; //parseInt(document.getElementById('cmp').value);
+    var implEPSgr = 9; //parseInt(document.getElementById('implEPSgr').value);
+        
+    var eps1 = parseInt(eps*(1+epsgr1/100)); console.log('EPS FY15E : '+eps1);
+    var eps2 = parseInt(eps1*(1+epsgr2/100)); console.log('EPS FY16E : '+eps2);
+    var dvndpayoutratio = dvnd/eps; console.log('Dividend Payout Ratio : '+dvndpayoutratio);
+    
+    var dvnd1 = parseInt(eps1*dvndpayoutratio); console.log('Dividend FY15E : '+dvnd1);
+    var dvnd2 = parseInt(eps2*dvndpayoutratio); console.log('Dividend FY16E : '+dvnd2);
+    var bv1 = bv + eps1 - dvnd1; console.log('BVPS FY15E : '+bv1);
+    var bv2 = bv1 + eps2 - dvnd2; console.log('BVPS FY16E : '+bv2);
+    
+    var roce1 = (100*eps1/bv).toFixed(2); console.log('ROCE FY15E : '+roce1);
+    var roce2 = (100*eps2/bv1).toFixed(2); console.log('ROCE FY16E : '+roce2);
+    
+    var re1 = (roce1 - dr)*bv/100; console.log('Residual Earning FY15E : '+re1);
+    var re2 = (roce2 - dr)*bv1/100; console.log('Residual Earning FY16E : '+re2);
+    
+    var grRe = ((re2/re1)- 1).toFixed(4) ; console.log('Growth in Residual Earning : '+grRe*100);
+    var ltgreps = (eps2/eps1 - 1).toFixed(2); console.log('LT Growth in EPS : '+ltgreps*100);
+    
+    var staccVal1 = parseInt(re1/(1+dr/100)); console.log('Value from ST accounting Year 1 : '+staccVal1);
+    var staccVal2 = parseInt(re2/((1+dr/100)*(dr/100))); console.log('Value from ST accounting Year 2 : '+staccVal2);
+    
+    var totValSansSpec = bv + staccVal1 + staccVal2; console.log('Total Value excl. Speculative : '+totValSansSpec);
+    var specVal = cmp - totValSansSpec; console.log('Speculative Value : '+specVal);
+    var specValOfCmp = specVal/cmp;
+    
+    var fre1 = roce1 - dr; console.log('Forecasted Residual Income FY15E : '+fre1);
+    var fre2 = roce2 - dr; console.log('Forecasted Residual Income FY16E : '+fre2);
+    
+    var eqVal = parseInt(bv + ((fre1*bv/100)/(1+dr/100)) + ((fre2*bv1/100)/((1+dr/100)*((dr-implEPSgr)/100)))); 
+    console.log('Value of Equity : '+eqVal);
+    
+    var variation = ((eqVal/cmp - 1)*100).toFixed(2); console.log('Variation : '+variation);
+</script>
+
+<body>
+
+</body>
+
+</html>
